@@ -49,6 +49,7 @@ class SettingsFragment : ScribeFragment("Settings") {
                         onInstallKeyboard = ::navigateToKeyboardSettings,
                         isKeyboardInstalled = isKeyboardInstalled,
                         isUserDarkMode = isSystemDarkMode,
+                        onTranslationLanguageSelect = ::selectTranslationLanguage,
                     )
                 }
             }
@@ -86,6 +87,10 @@ class SettingsFragment : ScribeFragment("Settings") {
             imm.enabledInputMethodList.any {
                 it.packageName == "be.scri.debug"
             }
+    }
+
+    private fun selectTranslationLanguage() {
+
     }
 
     private fun selectLanguage() {

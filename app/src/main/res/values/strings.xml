@@ -1585,5 +1585,8 @@
         <item>@string/friday_short</item>
         <item>@string/saturday_short</item>
         <item>@string/sunday_short</item>
-    </array>
+    </array>'
+<!--    TODO: figure out how to move this to string.xml and create translations -->
+    <string name="app.settings.menu.translation_language_description" translatable="false">Select the language to translate from</string>
+    <string name="app.settings.menu.translation_language" translatable="false">Translation source language</string>
 </resources>
