@@ -39,7 +39,6 @@ fun SettingsScreen(
     isUserDarkMode: Boolean,
     isKeyboardInstalled: Boolean,
     onLanguageSelect: () -> Unit,
-    onTranslationLanguageSelect: () -> Unit,
     onDarkModeChange: (Boolean) -> Unit,
     onInstallKeyboard: () -> Unit,
     modifier: Modifier = Modifier,
@@ -111,11 +110,6 @@ fun SettingsScreen(
                     popupOnKeypress.value = shouldPopUpOnKeypress
                     PreferencesHelper.setShowPopupOnKeypress(context, shouldPopUpOnKeypress)
                 },
-            ),
-            ScribeItem.ClickableItem(
-                title = stringResource(R.string.app_settings_menu_translation_language),
-                desc = stringResource(R.string.app_settings_menu_translation_language_description),
-                action = onTranslationLanguageSelect,
             ),
         )
 

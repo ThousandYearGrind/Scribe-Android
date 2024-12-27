@@ -18,6 +18,7 @@ import be.scri.helpers.PreferencesHelper
 import be.scri.ui.common.components.ItemCardContainerWithTitle
 import be.scri.ui.models.ScribeItem
 import be.scri.ui.models.ScribeItemList
+import org.junit.Test
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -64,6 +65,9 @@ fun LanguageSettingsScreen(
                 ),
             )
         }
+    val onTranslationLanguageSelect = {
+
+    }
 
     val layoutList =
         ScribeItemList(
@@ -83,6 +87,9 @@ fun LanguageSettingsScreen(
                             language,
                             shouldDisableAccentCharacter,
                         )
+                    },
+                    onTranslationLanguageSelect = {
+
                     },
                 ),
         )
@@ -107,6 +114,9 @@ fun LanguageSettingsScreen(
                             language,
                             shouldDoubleSpacePeriod,
                         )
+                    },
+                    onTranslationLanguageSelect = {
+
                     },
                 ),
         )
@@ -139,6 +149,7 @@ private fun getFunctionalityListData(
     onTogglePeriodOnDoubleTap: (Boolean) -> Unit,
     emojiSuggestionsState: Boolean,
     onToggleEmojiSuggestions: (Boolean) -> Unit,
+    onTranslationLanguageSelect: () -> Unit,
 ): List<ScribeItem> {
     val list =
         listOf(
@@ -178,6 +189,7 @@ private fun getLayoutListData(
     onTogglePeriodAndComma: (Boolean) -> Unit,
     toggleDisableAccentCharacter: Boolean,
     onToggleDisableAccentCharacter: (Boolean) -> Unit,
+    onTranslationLanguageSelect: () -> Unit,
 ): List<ScribeItem> {
     val list: MutableList<ScribeItem> = mutableListOf()
 
@@ -212,6 +224,15 @@ private fun getLayoutListData(
                 ),
             state = togglePeriodAndCommaState,
             onToggle = onTogglePeriodAndComma,
+        ),
+    )
+
+    list.add(
+
+        ScribeItem.ClickableItem(
+            title = stringResource(R.string.app_settings_menu_translation_language),
+            desc = stringResource(R.string.app_settings_menu_translation_language_description),
+            action = onTranslationLanguageSelect,
         ),
     )
 
